@@ -18,6 +18,10 @@ http://creativecommons.org/publicdomain/zero/1.0/
 #endif
 #include "align.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #define Capacity                        (256/8)
 #define TagLength                       (128/8)
 
@@ -110,5 +114,9 @@ http://creativecommons.org/publicdomain/zero/1.0/
     int prefix##Keyak_Initialize(prefix##Keyak_Instance *instance, const unsigned char *key, unsigned int keySizeInBytes, const unsigned char *nonce, unsigned int nonceSizeInBytes, int tagFlag, unsigned char * tag, int unwrapFlag, int forgetFlag); \
     int prefix##Keyak_Wrap(prefix##Keyak_Instance *instance, const unsigned char *input, unsigned char *output, size_t dataSizeInBytes, const unsigned char * AD, size_t ADlen, unsigned char * tag, int unwrapFlag, int forgetFlag ); \
     int prefix##Keyak_WrapPartial(prefix##Keyak_Instance *instance, const unsigned char *input, unsigned char *output, size_t dataSizeInBytes, const unsigned char * AD, size_t ADlen, unsigned char * tag, int unwrapFlag, int forgetFlag, int lastFlags, size_t *processedIlen, size_t *processedAlen);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif

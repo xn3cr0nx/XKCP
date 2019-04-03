@@ -12,6 +12,10 @@ http://creativecommons.org/publicdomain/zero/1.0/
 #ifndef _Xoodoo_SnP_h_
 #define _Xoodoo_SnP_h_
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /** For the documentation, see SnP-documentation.h.
  */
 
@@ -33,5 +37,9 @@ void Xoodoo_Permute_6rounds(void *state);
 void Xoodoo_Permute_12rounds(void *state);
 void Xoodoo_ExtractBytes(const void *state, unsigned char *data, unsigned int offset, unsigned int length);
 void Xoodoo_ExtractAndAddBytes(const void *state, const unsigned char *input, unsigned char *output, unsigned int offset, unsigned int length);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif

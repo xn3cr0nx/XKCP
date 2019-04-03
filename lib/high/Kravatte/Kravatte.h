@@ -19,6 +19,9 @@ http://creativecommons.org/publicdomain/zero/1.0/
 #include "align.h"
 #include "KeccakP-1600-SnP.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 #define SnP_widthInBytes            200
 #define Kravatte_RollcSizeInBytes    (5*8)
@@ -101,6 +104,10 @@ int Vatte(Kravatte_Instance *kvInstance, BitSequence *output, BitLength outputBi
   * @return 0 if successful, 1 otherwise.
   */
 int Kravatte(Kravatte_Instance *kvInstance, const BitSequence *input, BitLength inputBitLen, BitSequence *output, BitLength outputBitLen, int flags);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif
 

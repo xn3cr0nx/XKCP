@@ -16,6 +16,10 @@ Please refer to SnP-documentation.h for more details.
 #ifndef _KeccakP_800_SnP_h_
 #define _KeccakP_800_SnP_h_
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #define KeccakP800_implementation      "32-bit compact implementation"
 #define KeccakP800_stateSizeInBytes    100
 #define KeccakP800_stateAlignment      4
@@ -31,5 +35,9 @@ void KeccakP800_Permute_12rounds(void *state);
 void KeccakP800_Permute_22rounds(void *state);
 void KeccakP800_ExtractBytes(const void *state, unsigned char *data, unsigned int offset, unsigned int length);
 void KeccakP800_ExtractAndAddBytes(const void *state, const unsigned char *input, unsigned char *output, unsigned int offset, unsigned int length);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif

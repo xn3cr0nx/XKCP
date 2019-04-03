@@ -14,6 +14,10 @@ http://creativecommons.org/publicdomain/zero/1.0/
 
 #include "Keyak-common.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /** Length of the River Keyak key pack. */
 #define RiverKeyak_Lk                  36
 
@@ -28,6 +32,10 @@ http://creativecommons.org/publicdomain/zero/1.0/
     KCP_DeclareMotoristFunctions(KeyakWidth800)
     KCP_DeclareKeyakStructure(River, KeyakWidth800, KeccakP800_stateAlignment)
     KCP_DeclareKeyakFunctions(River)
+#endif
+
+#ifdef __cplusplus
+}
 #endif
 
 #endif

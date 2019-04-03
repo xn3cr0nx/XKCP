@@ -17,6 +17,10 @@ http://creativecommons.org/publicdomain/zero/1.0/
 #include "KeccakSpongeWidth1600.h"
 #include "Phases.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #ifndef KeccakP1600_excluded
 
 #ifndef _Keccak_BitTypes_
@@ -584,6 +588,10 @@ int TupleHash256_Final(TupleHash_Instance *TupleHashInstance, BitSequence * outp
   * @return 0 if successful, 1 otherwise.
   */
 int TupleHash256_Squeeze(TupleHash_Instance *TupleHashInstance, BitSequence *output, BitLength outputBitLen);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif
 

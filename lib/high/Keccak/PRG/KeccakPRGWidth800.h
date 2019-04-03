@@ -15,10 +15,18 @@ http://creativecommons.org/publicdomain/zero/1.0/
 #include "KeccakDuplexWidth800.h"
 #include "KeccakPRG-common.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #ifndef KeccakP800_excluded
     #include "KeccakP-800-SnP.h"
     KCP_DeclareSpongePRG_Structure(KeccakWidth800, KeccakP800_stateSizeInBytes, KeccakP800_stateAlignment)
     KCP_DeclareSpongePRG_Functions(KeccakWidth800)
+#endif
+
+#ifdef __cplusplus
+}
 #endif
 
 #endif

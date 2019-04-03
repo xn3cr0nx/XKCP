@@ -19,6 +19,10 @@ Please refer to PlSnP-documentation.h for more details.
 #include <stdint.h>
 #include "SIMD256-config.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #define KeccakP1600times4_implementation        "256-bit SIMD implementation (" KeccakP1600times4_implementation_config ")"
 #define KeccakP1600times4_statesSizeInBytes     800
 #define KeccakP1600times4_statesAlignment       32
@@ -49,5 +53,9 @@ size_t KeccakF1600times4_FastLoop_Absorb(void *states, unsigned int laneCount, u
 size_t KeccakP1600times4_12rounds_FastLoop_Absorb(void *states, unsigned int laneCount, unsigned int laneOffsetParallel, unsigned int laneOffsetSerial, const unsigned char *data, size_t dataByteLen);
 size_t KeccakP1600times4_KravatteCompress(uint64_t *xAccu, uint64_t *kRoll, const unsigned char *input, size_t inputByteLen);
 size_t KeccakP1600times4_KravatteExpand(uint64_t *yAccu, const uint64_t *kRoll, unsigned char *output, size_t outputByteLen);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif

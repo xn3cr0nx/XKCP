@@ -19,6 +19,10 @@ http://creativecommons.org/publicdomain/zero/1.0/
 #include "align.h"
 #include "Kravatte.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /**
   * Kravatte-SANE Tag Length in bytes.
   */
@@ -233,6 +237,10 @@ int Kravatte_WBCAE_Encipher(Kravatte_Instance *kvwInstance, BitSequence *plainte
   */
 int Kravatte_WBCAE_Decipher(Kravatte_Instance *kvwInstance, const BitSequence *ciphertext, BitSequence *plaintext, BitLength dataBitLen, 
                         const BitSequence *AD, BitLength ADBitLen);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif
 

@@ -12,6 +12,10 @@ http://creativecommons.org/publicdomain/zero/1.0/
 #ifndef _KetCommon_h_
 #define _KetCommon_h_
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /*  Ketje frame bits */
 #define FRAMEBITSEMPTY  0x01
 #define FRAMEBITS0      0x02
@@ -36,5 +40,9 @@ void prefix##_Step( void *state, unsigned int size, unsigned char frameAndPaddin
 void prefix##_FeedAssociatedDataBlocks( void *state, const unsigned char *data, unsigned int nBlocks ); \
 void prefix##_UnwrapBlocks( void *state, const unsigned char *ciphertext, unsigned char *plaintext, unsigned int nBlocks ); \
 void prefix##_WrapBlocks( void *state, const unsigned char *plaintext, unsigned char *ciphertext, unsigned int nBlocks ); \
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif

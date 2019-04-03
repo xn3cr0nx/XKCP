@@ -18,6 +18,10 @@ Please refer to SnP-documentation.h for more details.
 
 #include <stddef.h>
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #define KeccakP1600_implementation      "AVX2 optimized implementation"
 #define KeccakP1600_stateSizeInBytes    200
 #define KeccakP1600_stateAlignment      32
@@ -37,5 +41,9 @@ void KeccakP1600_ExtractBytes(const void *state, unsigned char *data, unsigned i
 void KeccakP1600_ExtractAndAddBytes(const void *state, const unsigned char *input, unsigned char *output, unsigned int offset, unsigned int length);
 size_t KeccakF1600_FastLoop_Absorb(void *state, unsigned int laneCount, const unsigned char *data, size_t dataByteLen);
 size_t KeccakP1600_12rounds_FastLoop_Absorb(void *state, unsigned int laneCount, const unsigned char *data, size_t dataByteLen);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif

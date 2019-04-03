@@ -16,10 +16,18 @@ http://creativecommons.org/publicdomain/zero/1.0/
 
 #include "KeccakSponge-common.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #ifndef KeccakP400_excluded
     #include "KeccakP-400-SnP.h"
     KCP_DeclareSpongeStructure(KeccakWidth400, KeccakP400_stateSizeInBytes, KeccakP400_stateAlignment)
     KCP_DeclareSpongeFunctions(KeccakWidth400)
+#endif
+
+#ifdef __cplusplus
+}
 #endif
 
 #endif

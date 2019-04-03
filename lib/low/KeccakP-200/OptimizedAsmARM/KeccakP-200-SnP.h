@@ -16,6 +16,10 @@ Please refer to SnP-documentation.h for more details.
 #ifndef _KeccakP_200_SnP_h_
 #define _KeccakP_200_SnP_h_
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #define KeccakP200_implementation      "32-bit optimized ARM assembler implementation"
 #define KeccakP200_stateSizeInBytes    25
 #define KeccakP200_stateAlignment      4
@@ -32,5 +36,9 @@ void KeccakP200_Permute_Nrounds(void *state, unsigned int nrounds);
 void KeccakP200_Permute_18rounds(void *state);
 void KeccakP200_ExtractBytes(const void *state, unsigned char *data, unsigned int offset, unsigned int length);
 void KeccakP200_ExtractAndAddBytes(const void *state, const unsigned char *input, unsigned char *output, unsigned int offset, unsigned int length);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif

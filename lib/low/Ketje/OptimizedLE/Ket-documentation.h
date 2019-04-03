@@ -23,6 +23,10 @@ http://creativecommons.org/publicdomain/zero/1.0/
 
 #ifdef DontReallyInclude_DocumentationOnly
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /**
   * Function to add one byte to the permutation state.
   *
@@ -93,5 +97,9 @@ void Prefix_UnwrapBlocks( void *state, const unsigned char *ciphertext, unsigned
   * @param  nBlocks             Number of blocks.
   */
 void Prefix_WrapBlocks( void *state, const unsigned char *plaintext, unsigned char *ciphertext, unsigned int nBlocks );
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif

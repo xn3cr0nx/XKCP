@@ -12,6 +12,10 @@ http://creativecommons.org/publicdomain/zero/1.0/
 #ifndef _Xoodoo_times16_SnP_h_
 #define _Xoodoo_times16_SnP_h_
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /** For the documentation, see PlSnP-documentation.h.
  */
 
@@ -34,5 +38,9 @@ void Xoodootimes16_ExtractBytes(const void *states, unsigned int instanceIndex, 
 void Xoodootimes16_ExtractLanesAll(const void *states, unsigned char *data, unsigned int laneCount, unsigned int laneOffset);
 void Xoodootimes16_ExtractAndAddBytes(const void *states, unsigned int instanceIndex,  const unsigned char *input, unsigned char *output, unsigned int offset, unsigned int length);
 void Xoodootimes16_ExtractAndAddLanesAll(const void *states, const unsigned char *input, unsigned char *output, unsigned int laneCount, unsigned int laneOffset);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif

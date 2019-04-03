@@ -14,6 +14,10 @@ http://creativecommons.org/publicdomain/zero/1.0/
 
 #include "Keyak-common.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /** Length of the Lunar Keyak key pack. */
 #define LunarKeyak_Lk                  40
 
@@ -28,6 +32,10 @@ http://creativecommons.org/publicdomain/zero/1.0/
     KCP_DeclareMotoristFunctions(KeyakWidth1600times8)
     KCP_DeclareKeyakStructure(Lunar, KeyakWidth1600times8, KeccakP1600times8_statesAlignment)
     KCP_DeclareKeyakFunctions(Lunar)
+#endif
+
+#ifdef __cplusplus
+}
 #endif
 
 #endif

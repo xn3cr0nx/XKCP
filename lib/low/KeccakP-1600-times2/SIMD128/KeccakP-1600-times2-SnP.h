@@ -18,6 +18,10 @@ Please refer to PlSnP-documentation.h for more details.
 
 #include "SIMD128-config.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #define KeccakP1600times2_implementation        "128-bit SIMD implementation (" KeccakP1600times2_implementation_config ")"
 #define KeccakP1600times2_statesSizeInBytes     400
 #define KeccakP1600times2_statesAlignment       16
@@ -43,5 +47,9 @@ void KeccakP1600times2_ExtractLanesAll(const void *states, unsigned char *data, 
 void KeccakP1600times2_ExtractAndAddBytes(const void *states, unsigned int instanceIndex,  const unsigned char *input, unsigned char *output, unsigned int offset, unsigned int length);
 void KeccakP1600times2_ExtractAndAddLanesAll(const void *states, const unsigned char *input, unsigned char *output, unsigned int laneCount, unsigned int laneOffset);
 size_t KeccakF1600times2_FastLoop_Absorb(void *states, unsigned int laneCount, unsigned int laneOffsetParallel, unsigned int laneOffsetSerial, const unsigned char *data, size_t dataByteLen);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif

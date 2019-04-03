@@ -14,9 +14,17 @@ http://creativecommons.org/publicdomain/zero/1.0/
 
 #include "Ket-common.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #ifndef KeccakP200_excluded
     #include "KeccakP-200-SnP.h"
     KCP_DeclareKetFunctions(KetJr)
+#endif
+
+#ifdef __cplusplus
+}
 #endif
 
 #endif

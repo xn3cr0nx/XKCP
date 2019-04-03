@@ -14,6 +14,10 @@ http://creativecommons.org/publicdomain/zero/1.0/
 
 #include "align.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #define KCP_DeclareSpongePRG_Structure(prefix, size, alignment) \
     ALIGN(alignment) typedef struct prefix##_SpongePRG_InstanceStruct { \
         prefix##_DuplexInstance duplex; \
@@ -24,5 +28,9 @@ http://creativecommons.org/publicdomain/zero/1.0/
     int prefix##_SpongePRG_Feed(prefix##_SpongePRG_Instance *instance, const unsigned char *input, unsigned int inputByteLen); \
     int prefix##_SpongePRG_Fetch(prefix##_SpongePRG_Instance *Instance, unsigned char *out, unsigned int outByteLen); \
     int prefix##_SpongePRG_Forget(prefix##_SpongePRG_Instance *instance);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif

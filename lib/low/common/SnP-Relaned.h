@@ -22,6 +22,10 @@ Please refer to SnP-documentation.h for more details.
 #ifndef _SnP_Relaned_h_
 #define _SnP_Relaned_h_
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #define SnP_AddBytes(state, data, offset, length, SnP_AddLanes, SnP_AddBytesInLane, SnP_laneLengthInBytes) \
     { \
         if ((offset) == 0) { \
@@ -136,5 +140,9 @@ Please refer to SnP-documentation.h for more details.
             } \
         } \
     }
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif

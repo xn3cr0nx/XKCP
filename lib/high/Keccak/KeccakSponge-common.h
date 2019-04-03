@@ -17,6 +17,10 @@ http://creativecommons.org/publicdomain/zero/1.0/
 #include <string.h>
 #include "align.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #define KCP_DeclareSpongeStructure(prefix, size, alignment) \
     ALIGN(alignment) typedef struct prefix##_SpongeInstanceStruct { \
         unsigned char state[size]; \
@@ -31,5 +35,9 @@ http://creativecommons.org/publicdomain/zero/1.0/
     int prefix##_SpongeAbsorb(prefix##_SpongeInstance *spongeInstance, const unsigned char *data, size_t dataByteLen); \
     int prefix##_SpongeAbsorbLastFewBits(prefix##_SpongeInstance *spongeInstance, unsigned char delimitedData); \
     int prefix##_SpongeSqueeze(prefix##_SpongeInstance *spongeInstance, unsigned char *data, size_t dataByteLen);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif

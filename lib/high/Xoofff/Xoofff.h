@@ -19,6 +19,10 @@ http://creativecommons.org/publicdomain/zero/1.0/
 #include "align.h"
 #include "Xoodoo-SnP.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 
 #define SnP_widthInBytes          (3*4*4)
 #define Xoofff_RollSizeInBytes    SnP_widthInBytes
@@ -127,6 +131,10 @@ int Xoofff_Expand(Xoofff_Instance *xpInstance, BitSequence *output, BitLength ou
   * @return 0 if successful, 1 otherwise.
   */
 int Xoofff(Xoofff_Instance *xpInstance, const BitSequence *input, BitLength inputBitLen, BitSequence *output, BitLength outputBitLen, int flags);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif
 

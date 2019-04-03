@@ -15,6 +15,10 @@ http://creativecommons.org/publicdomain/zero/1.0/
 #include <stdint.h>
 #include <stdlib.h>
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #define MAXROUNDS   12
 #define NROWS       3
 #define NCOLUMS     4
@@ -70,5 +74,9 @@ http://creativecommons.org/publicdomain/zero/1.0/
 #endif
 
 typedef    uint32_t tXoodooLane;
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif

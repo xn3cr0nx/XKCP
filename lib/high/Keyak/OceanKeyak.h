@@ -14,6 +14,10 @@ http://creativecommons.org/publicdomain/zero/1.0/
 
 #include "Keyak-common.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /** Length of the Ocean Keyak key pack. */
 #define OceanKeyak_Lk                  40
 
@@ -28,6 +32,10 @@ http://creativecommons.org/publicdomain/zero/1.0/
     KCP_DeclareMotoristFunctions(KeyakWidth1600times4)
     KCP_DeclareKeyakStructure(Ocean, KeyakWidth1600times4, KeccakP1600times4_statesAlignment)
     KCP_DeclareKeyakFunctions(Ocean)
+#endif
+
+#ifdef __cplusplus
+}
 #endif
 
 #endif

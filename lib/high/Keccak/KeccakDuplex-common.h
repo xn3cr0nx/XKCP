@@ -16,6 +16,10 @@ http://creativecommons.org/publicdomain/zero/1.0/
 
 #include "align.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #define KCP_DeclareDuplexStructure(prefix, size, alignment) \
     ALIGN(alignment) typedef struct prefix##_DuplexInstanceStruct { \
         unsigned char state[size]; \
@@ -33,5 +37,9 @@ http://creativecommons.org/publicdomain/zero/1.0/
     int prefix##_DuplexingOverwriteWithZeroes(prefix##_DuplexInstance *duplexInstance, unsigned int inputByteLen); \
     int prefix##_DuplexingGetFurtherOutput(prefix##_DuplexInstance *duplexInstance, unsigned char *out, unsigned int outByteLen); \
     int prefix##_DuplexingGetFurtherOutputAndAdd(prefix##_DuplexInstance *duplexInstance, const unsigned char *input, unsigned char *output, unsigned int outputByteLen);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif

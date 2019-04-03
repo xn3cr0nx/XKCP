@@ -20,6 +20,10 @@ Please refer to SnP-documentation.h for more details.
 
 #include "KeccakP-800-opt32-config.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #define KeccakP800_implementation      "generic 32-bit optimized implementation (" KeccakP800_implementation_config ")"
 #define KeccakP800_stateSizeInBytes    100
 #define KeccakP800_stateAlignment      4
@@ -39,5 +43,9 @@ void KeccakP800_Permute_22rounds(void *state);
 void KeccakP800_ExtractBytes(const void *state, unsigned char *data, unsigned int offset, unsigned int length);
 void KeccakP800_ExtractAndAddBytes(const void *state, const unsigned char *input, unsigned char *output, unsigned int offset, unsigned int length);
 size_t KeccakF800_FastLoop_Absorb(void *state, unsigned int laneCount, const unsigned char *data, size_t dataByteLen);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif

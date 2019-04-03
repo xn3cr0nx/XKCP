@@ -18,6 +18,10 @@ Please refer to PlSnP-documentation.h for more details.
 
 #include "SIMD512-4-config.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #define KeccakP1600times4_implementation        "512-bit SIMD implementation (" KeccakP1600times4_implementation_config ")"
 #define KeccakP1600times4_statesSizeInBytes     800
 #define KeccakP1600times4_statesAlignment       64
@@ -45,5 +49,9 @@ void KeccakP1600times4_ExtractAndAddBytes(const void *states, unsigned int insta
 void KeccakP1600times4_ExtractAndAddLanesAll(const void *states, const unsigned char *input, unsigned char *output, unsigned int laneCount, unsigned int laneOffset);
 size_t KeccakF1600times4_FastLoop_Absorb(void *states, unsigned int laneCount, unsigned int laneOffsetParallel, unsigned int laneOffsetSerial, const unsigned char *data, size_t dataByteLen);
 size_t KeccakP1600times4_12rounds_FastLoop_Absorb(void *states, unsigned int laneCount, unsigned int laneOffsetParallel, unsigned int laneOffsetSerial, const unsigned char *data, size_t dataByteLen);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif

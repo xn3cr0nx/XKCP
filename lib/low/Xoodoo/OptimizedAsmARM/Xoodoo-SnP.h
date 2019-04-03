@@ -14,6 +14,10 @@ http://creativecommons.org/publicdomain/zero/1.0/
 
 #include <stddef.h>
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /** For the documentation, see SnP-documentation.h.
  */
 
@@ -37,5 +41,9 @@ void Xoodoo_ExtractAndAddBytes(const void *state, const unsigned char *input, un
 void Xoofff_AddIs(unsigned char *output, const unsigned char *input, size_t bitLen);
 size_t Xoofff_CompressFastLoop(unsigned char *kRoll, unsigned char *xAccu, const unsigned char *input, size_t length);
 size_t Xoofff_ExpandFastLoop(unsigned char *yAccu, const unsigned char *kRoll, unsigned char *output, size_t length);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif

@@ -18,6 +18,10 @@ Please refer to SnP-documentation.h for more details.
 #ifndef _KeccakP_1600_SnP_h_
 #define _KeccakP_1600_SnP_h_
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #define KeccakP1600_implementation      "64-bit optimized implementation (lane complementing, all rounds unrolled) compiled by GCC 4.7.4 for Sandy Bridge"
 #define KeccakP1600_stateSizeInBytes    200
 #define KeccakP1600_stateAlignment      8
@@ -36,5 +40,9 @@ void KeccakP1600_Permute_24rounds(void *state);
 void KeccakP1600_ExtractBytes(const void *state, unsigned char *data, unsigned int offset, unsigned int length);
 void KeccakP1600_ExtractAndAddBytes(const void *state, const unsigned char *input, unsigned char *output, unsigned int offset, unsigned int length);
 size_t KeccakF1600_FastLoop_Absorb(void *state, unsigned int laneCount, const unsigned char *data, size_t dataByteLen);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif

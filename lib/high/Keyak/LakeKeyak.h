@@ -14,6 +14,10 @@ http://creativecommons.org/publicdomain/zero/1.0/
 
 #include "Keyak-common.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /** Length of the Lake Keyak key pack. */
 #define LakeKeyak_Lk                   40
 
@@ -28,6 +32,10 @@ http://creativecommons.org/publicdomain/zero/1.0/
     KCP_DeclareMotoristFunctions(KeyakWidth1600)
     KCP_DeclareKeyakStructure(Lake, KeyakWidth1600, KeccakP1600_stateAlignment)
     KCP_DeclareKeyakFunctions(Lake)
+#endif
+
+#ifdef __cplusplus
+}
 #endif
 
 #endif

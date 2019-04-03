@@ -20,6 +20,10 @@ Please refer to PlSnP-documentation.h for more details.
 
 #include "KeccakP-1600-times4-SnP.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #define KeccakP1600times8_implementation        "fallback on times-4 implementation (" KeccakP1600times4_implementation ")"
 #define KeccakP1600times8_statesSizeInBytes     (((KeccakP1600times4_statesSizeInBytes+(KeccakP1600times4_statesAlignment-1))/KeccakP1600times4_statesAlignment)*KeccakP1600times4_statesAlignment*2)
 #define KeccakP1600times8_statesAlignment       KeccakP1600times4_statesAlignment
@@ -41,5 +45,9 @@ void KeccakP1600times8_ExtractBytes(const void *states, unsigned int instanceInd
 void KeccakP1600times8_ExtractLanesAll(const void *states, unsigned char *data, unsigned int laneCount, unsigned int laneOffset);
 void KeccakP1600times8_ExtractAndAddBytes(const void *states, unsigned int instanceIndex,  const unsigned char *input, unsigned char *output, unsigned int offset, unsigned int length);
 void KeccakP1600times8_ExtractAndAddLanesAll(const void *states, const unsigned char *input, unsigned char *output, unsigned int laneCount, unsigned int laneOffset);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif

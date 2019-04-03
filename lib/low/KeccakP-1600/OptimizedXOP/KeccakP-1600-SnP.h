@@ -18,6 +18,10 @@ Please refer to SnP-documentation.h for more details.
 
 #include "KeccakP-1600-XOP-config.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #define KeccakP1600_implementation      "implementation optimized for XOP (" KeccakP1600_implementation_config ")"
 #define KeccakP1600_stateSizeInBytes    200
 #define KeccakP1600_stateAlignment      8
@@ -35,5 +39,9 @@ void KeccakP1600_Permute_12rounds(void *state);
 void KeccakP1600_Permute_24rounds(void *state);
 void KeccakP1600_ExtractBytes(const void *state, unsigned char *data, unsigned int offset, unsigned int length);
 void KeccakP1600_ExtractAndAddBytes(const void *state, const unsigned char *input, unsigned char *output, unsigned int offset, unsigned int length);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif

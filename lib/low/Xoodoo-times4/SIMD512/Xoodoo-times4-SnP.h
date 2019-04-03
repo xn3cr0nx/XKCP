@@ -12,6 +12,10 @@ http://creativecommons.org/publicdomain/zero/1.0/
 #ifndef _Xoodoo_times4_SnP_h_
 #define _Xoodoo_times4_SnP_h_
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /** For the documentation, see PlSnP-documentation.h.
  */
 
@@ -39,5 +43,9 @@ void Xoodootimes4_ExtractAndAddLanesAll(const void *states, const unsigned char 
 void Xooffftimes4_AddIs(unsigned char *output, const unsigned char *input, size_t bitLen);
 size_t Xooffftimes4_CompressFastLoop(unsigned char *k, unsigned char *x, const unsigned char *input, size_t length);
 size_t Xooffftimes4_ExpandFastLoop(unsigned char *yAccu, const unsigned char *kRoll, unsigned char *output, size_t length);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif

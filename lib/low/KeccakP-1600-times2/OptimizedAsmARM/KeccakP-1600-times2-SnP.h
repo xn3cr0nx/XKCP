@@ -16,6 +16,10 @@ Please refer to PlSnP-documentation.h for more details.
 #ifndef _KeccakP_1600_times2_SnP_h_
 #define _KeccakP_1600_times2_SnP_h_
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #define KeccakP1600times2_implementation        "64-bit optimized ARM NEON assembler implementation"
 #define KeccakP1600times2_statesSizeInBytes     (200*2)
 #define KeccakP1600times2_statesAlignment       64
@@ -34,5 +38,9 @@ void KeccakP1600times2_ExtractBytes(const void *states, unsigned int instanceInd
 void KeccakP1600times2_ExtractLanesAll(const void *states, unsigned char *data, unsigned int laneCount, unsigned int laneOffset);
 void KeccakP1600times2_ExtractAndAddBytes(const void *states, unsigned int instanceIndex,  const unsigned char *input, unsigned char *output, unsigned int offset, unsigned int length);
 void KeccakP1600times2_ExtractAndAddLanesAll(const void *states, const unsigned char *input, unsigned char *output, unsigned int laneCount, unsigned int laneOffset);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif

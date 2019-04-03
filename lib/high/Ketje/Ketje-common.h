@@ -15,6 +15,10 @@ http://creativecommons.org/publicdomain/zero/1.0/
 #include <string.h>
 #include "align.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /** The phase is a data element that expresses what Ketje is doing
  * - virgin: the only operation supported is initialization, loading the key and nonce. This will switch
  *   the phase to feedingAssociatedData
@@ -47,5 +51,9 @@ enum Phase {
     int prefix##_WrapPlaintext(prefix##_Instance *instance, const unsigned char *plaintext, unsigned char *ciphertext, unsigned int dataSizeInBytes); \
     int prefix##_UnwrapCiphertext(prefix##_Instance *instance, const unsigned char *ciphertext, unsigned char *plaintext, unsigned int dataSizeInBytes); \
     int prefix##_GetTag(prefix##_Instance *instance, unsigned char *tag, unsigned int tagSizeInBytes);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif

@@ -14,7 +14,15 @@ http://creativecommons.org/publicdomain/zero/1.0/
 #ifndef _KeccakP_400_reference_h_
 #define _KeccakP_400_reference_h_
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 void KeccakP400_DisplayRoundConstants(FILE *f);
 void KeccakP400_DisplayRhoOffsets(FILE *f);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif

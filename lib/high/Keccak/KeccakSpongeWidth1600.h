@@ -16,6 +16,10 @@ http://creativecommons.org/publicdomain/zero/1.0/
 
 #include "KeccakSponge-common.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #ifndef KeccakP1600_excluded
     #include "KeccakP-1600-SnP.h"
     KCP_DeclareSpongeStructure(KeccakWidth1600, KeccakP1600_stateSizeInBytes, KeccakP1600_stateAlignment)
@@ -26,6 +30,10 @@ http://creativecommons.org/publicdomain/zero/1.0/
     #include "KeccakP-1600-SnP.h"
     KCP_DeclareSpongeStructure(KeccakWidth1600_12rounds, KeccakP1600_stateSizeInBytes, KeccakP1600_stateAlignment)
     KCP_DeclareSpongeFunctions(KeccakWidth1600_12rounds)
+#endif
+
+#ifdef __cplusplus
+}
 #endif
 
 #endif

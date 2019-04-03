@@ -14,10 +14,18 @@ http://creativecommons.org/publicdomain/zero/1.0/
 
 #include "Ketje-common.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #ifndef KeccakP200_excluded
     #include "KeccakP-200-SnP.h"
     KCP_DeclareKetjeStructure(KetjeJr, KeccakP200_stateSizeInBytes, KeccakP200_stateAlignment)
     KCP_DeclareKetjeFunctions(KetjeJr)
+#endif
+
+#ifdef __cplusplus
+}
 #endif
 
 #endif

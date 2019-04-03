@@ -19,6 +19,10 @@ http://creativecommons.org/publicdomain/zero/1.0/
 #include "align.h"
 #include "Xoofff.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /**
   * XoofffSANE Tag Length in bytes.
   */
@@ -227,6 +231,10 @@ int XoofffWBCAE_Encipher(Xoofff_Instance *xpInstance, BitSequence *plaintext, Bi
   */
 int XoofffWBCAE_Decipher(Xoofff_Instance *xpInstance, const BitSequence *ciphertext, BitSequence *plaintext, BitLength dataBitLen, 
                         const BitSequence *AD, BitLength ADBitLen);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif
 

@@ -16,6 +16,10 @@ Please refer to SnP-documentation.h for more details.
 #ifndef _KeccakP_400_SnP_h_
 #define _KeccakP_400_SnP_h_
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #define KeccakP400_implementation      "8-bit optimized AVR assembler implementation"
 #define KeccakP400_stateSizeInBytes    50
 #define KeccakP400_stateAlignment      8
@@ -32,5 +36,9 @@ void KeccakP400_Permute_Nrounds(void *state, unsigned int nrounds);
 void KeccakP400_Permute_20rounds(void *state);
 void KeccakP400_ExtractBytes(const void *state, unsigned char *data, unsigned int offset, unsigned int length);
 void KeccakP400_ExtractAndAddBytes(const void *state, const unsigned char *input, unsigned char *output, unsigned int offset, unsigned int length);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif

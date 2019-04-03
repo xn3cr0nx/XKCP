@@ -16,10 +16,18 @@ http://creativecommons.org/publicdomain/zero/1.0/
 
 #include "KeccakDuplex-common.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #ifndef KeccakP1600_excluded
     #include "KeccakP-1600-SnP.h"
     KCP_DeclareDuplexStructure(KeccakWidth1600, KeccakP1600_stateSizeInBytes, KeccakP1600_stateAlignment)
     KCP_DeclareDuplexFunctions(KeccakWidth1600)
+#endif
+
+#ifdef __cplusplus
+}
 #endif
 
 #endif
